@@ -56,6 +56,10 @@
                         <button class="donate-btn-small" onclick="initiateRazorpayDonation(250)">₹250</button>
                         <button class="donate-btn-small" onclick="initiateRazorpayDonation(500)">₹500</button>
                     </div>
+                <div class="hero-merchandise">
+                    <p class="appointment-label">Official Merchandise</p>
+                    <button class="merch-btn" onclick="document.getElementById('merchandise-section').scrollIntoView({behavior: 'smooth'})">Shop T-Shirts</button>
+                </div>
                 </div>
             </div>
         </div>
@@ -211,6 +215,84 @@
         </div>
     </section>
 
+    <!-- Merchandise Section -->
+    <section id="merchandise-section" class="merchandise">
+        <div class="container">
+            <h2 class="section-title">Official Merchandise</h2>
+            <p class="merchandise-subtitle">Wear the Music - Premium John Adar T-Shirts</p>
+            
+            <div class="merchandise-grid">
+                <!-- White T-Shirt -->
+                <div class="merchandise-card">
+                    <div class="merch-color" style="background-color: #ffffff; border: 2px solid #ddd;">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663752149231/9kREf6eg3NexQ4dWmsqgha/john-adar-logo-UV4Ri9k5mVzCb5sCksMmYV.webp" alt="John Adar Logo" class="merch-logo">
+                    </div>
+                    <h3>White T-Shirt</h3>
+                    <p class="merch-price">₹499</p>
+                    <div class="size-selector">
+                        <button class="size-btn" onclick="selectMerch('White', 'XS', 499)">XS</button>
+                        <button class="size-btn" onclick="selectMerch('White', 'S', 499)">S</button>
+                        <button class="size-btn" onclick="selectMerch('White', 'M', 499)">M</button>
+                        <button class="size-btn" onclick="selectMerch('White', 'L', 499)">L</button>
+                        <button class="size-btn" onclick="selectMerch('White', 'XL', 499)">XL</button>
+                        <button class="size-btn" onclick="selectMerch('White', 'XXL', 549)">XXL</button>
+                    </div>
+                </div>
+
+                <!-- Black T-Shirt -->
+                <div class="merchandise-card">
+                    <div class="merch-color" style="background-color: #1a1a1a;">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663752149231/9kREf6eg3NexQ4dWmsqgha/john-adar-logo-UV4Ri9k5mVzCb5sCksMmYV.webp" alt="John Adar Logo" class="merch-logo" style="filter: brightness(1.2);">
+                    </div>
+                    <h3>Black T-Shirt</h3>
+                    <p class="merch-price">₹499</p>
+                    <div class="size-selector">
+                        <button class="size-btn" onclick="selectMerch('Black', 'XS', 499)">XS</button>
+                        <button class="size-btn" onclick="selectMerch('Black', 'S', 499)">S</button>
+                        <button class="size-btn" onclick="selectMerch('Black', 'M', 499)">M</button>
+                        <button class="size-btn" onclick="selectMerch('Black', 'L', 499)">L</button>
+                        <button class="size-btn" onclick="selectMerch('Black', 'XL', 499)">XL</button>
+                        <button class="size-btn" onclick="selectMerch('Black', 'XXL', 549)">XXL</button>
+                    </div>
+                </div>
+
+                <!-- Red T-Shirt -->
+                <div class="merchandise-card">
+                    <div class="merch-color" style="background-color: #e94560;">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663752149231/9kREf6eg3NexQ4dWmsqgha/john-adar-logo-UV4Ri9k5mVzCb5sCksMmYV.webp" alt="John Adar Logo" class="merch-logo" style="filter: brightness(1.1);">
+                    </div>
+                    <h3>Red T-Shirt</h3>
+                    <p class="merch-price">₹499</p>
+                    <div class="size-selector">
+                        <button class="size-btn" onclick="selectMerch('Red', 'XS', 499)">XS</button>
+                        <button class="size-btn" onclick="selectMerch('Red', 'S', 499)">S</button>
+                        <button class="size-btn" onclick="selectMerch('Red', 'M', 499)">M</button>
+                        <button class="size-btn" onclick="selectMerch('Red', 'L', 499)">L</button>
+                        <button class="size-btn" onclick="selectMerch('Red', 'XL', 499)">XL</button>
+                        <button class="size-btn" onclick="selectMerch('Red', 'XXL', 549)">XXL</button>
+                    </div>
+                </div>
+
+                <!-- Pink T-Shirt -->
+                <div class="merchandise-card">
+                    <div class="merch-color" style="background-color: #ff6b9d;">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663752149231/9kREf6eg3NexQ4dWmsqgha/john-adar-logo-UV4Ri9k5mVzCb5sCksMmYV.webp" alt="John Adar Logo" class="merch-logo">
+                    </div>
+                    <h3>Pink T-Shirt</h3>
+                    <p class="merch-price">₹499</p>
+                    <div class="size-selector">
+                        <button class="size-btn" onclick="selectMerch('Pink', 'XS', 499)">XS</button>
+                        <button class="size-btn" onclick="selectMerch('Pink', 'S', 499)">S</button>
+                        <button class="size-btn" onclick="selectMerch('Pink', 'M', 499)">M</button>
+                        <button class="size-btn" onclick="selectMerch('Pink', 'L', 499)">L</button>
+                        <button class="size-btn" onclick="selectMerch('Pink', 'XL', 499)">XL</button>
+                        <button class="size-btn" onclick="selectMerch('Pink', 'XXL', 549)">XXL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -296,6 +378,37 @@
                 },
                 notes: {
                     purpose: 'Support John Adar Music'
+                },
+                theme: {
+                    color: '#e94560'
+                }
+            };
+
+            const rzp = new Razorpay(options);
+            rzp.open();
+        }
+
+        function selectMerch(color, size, price) {
+            const merchItem = `${color} T-Shirt - Size ${size}`;
+            const options = {
+                key: 'rzp_test_T3sQp07ZSB17t7',
+                amount: price * 100,
+                currency: 'INR',
+                name: 'John Adar',
+                description: merchItem,
+                image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663752149231/9kREf6eg3NexQ4dWmsqgha/john-adar-logo-UV4Ri9k5mVzCb5sCksMmYV.webp',
+                handler: function(response) {
+                    alert('Thank you for your order! Payment ID: ' + response.razorpay_payment_id + '\n\nItem: ' + merchItem + '\nPrice: ₹' + price);
+                },
+                prefill: {
+                    name: '',
+                    email: '',
+                    contact: ''
+                },
+                notes: {
+                    item: merchItem,
+                    color: color,
+                    size: size
                 },
                 theme: {
                     color: '#e94560'
