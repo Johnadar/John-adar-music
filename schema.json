@@ -1,0 +1,112 @@
+{
+  "@context": "https://schema.org",
+  "@type": "MusicArtist",
+  "name": "John Adar",
+  "url": "https://johnadar.github.io/John-adar-music/",
+  "image": "https://johnadar.github.io/John-adar-music/og-image.jpg",
+  "description": "Contemporary music artist from India. Listen to latest releases including 'Midnight Dreams' and book concert tickets.",
+  "genre": "Contemporary",
+  "sameAs": [
+    "https://www.youtube.com/watch?v=GHZkeHmLhh4",
+    "https://www.spotify.com",
+    "https://www.apple.com/music"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-76309-95202",
+    "contactType": "Customer Service"
+  },
+  "event": [
+    {
+      "@type": "MusicEvent",
+      "name": "John Adar Concert - Kohima",
+      "startDate": "2024-06-15",
+      "location": {
+        "@type": "Place",
+        "name": "Nagaland Convention Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kohima",
+          "addressRegion": "Nagaland",
+          "addressCountry": "IN"
+        }
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://johnadar.github.io/John-adar-music/#tour",
+        "price": "500",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "John Adar Concert - Dimapur",
+      "startDate": "2024-06-22",
+      "location": {
+        "@type": "Place",
+        "name": "Dimapur Auditorium",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Dimapur",
+          "addressRegion": "Nagaland",
+          "addressCountry": "IN"
+        }
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "John Adar Concert - Itanagar",
+      "startDate": "2024-07-05",
+      "location": {
+        "@type": "Place",
+        "name": "Arunachal Pradesh Convention Hall",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Itanagar",
+          "addressRegion": "Arunachal Pradesh",
+          "addressCountry": "IN"
+        }
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "John Adar Concert - Bangalore",
+      "startDate": "2024-07-12",
+      "location": {
+        "@type": "Place",
+        "name": "Bangalore Convention Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bangalore",
+          "addressRegion": "Karnataka",
+          "addressCountry": "IN"
+        }
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "John Adar Concert - Guwahati",
+      "startDate": "2024-07-19",
+      "location": {
+        "@type": "Place",
+        "name": "Guwahati Auditorium",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Guwahati",
+          "addressRegion": "Assam",
+          "addressCountry": "IN"
+        }
+      }
+    }
+  ],
+  "album": {
+    "@type": "MusicAlbum",
+    "name": "Midnight Dreams",
+    "byArtist": {
+      "@type": "MusicArtist",
+      "name": "John Adar"
+    },
+    "datePublished": "2024"
+  }
+}
