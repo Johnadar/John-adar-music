@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="John Adar Music - Official Documentation. Learn about tour dates, tickets, merchandise, and how to support the music.">
+    <meta name="keywords" content="John Adar, music artist, documentation, tour dates, tickets, merchandise">
+    <meta name="author" content="John Adar">
+    <meta property="og:title" content="John Adar Music - Documentation">
+    <meta property="og:description" content="Official documentation for John Adar's music platform, tour dates, and merchandise.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://johnadar.github.io/John-adar-music/documentation.html">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>John Adar Music - Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .doc-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .doc-header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .doc-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #e94560, #ff6b9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .doc-header p {
+            color: #b8b8c8;
+            font-size: 1.1rem;
+        }
+
+        .doc-section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(42, 42, 62, 0.6);
+            border: 1px solid rgba(233, 69, 96, 0.15);
+            border-radius: 12px;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .doc-section h2 {
+            font-size: 1.8rem;
+            color: #e94560;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .doc-section h3 {
+            font-size: 1.3rem;
+            color: #f0f0f0;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .doc-section p {
+            color: #b8b8c8;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .doc-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .doc-section li {
+            color: #b8b8c8;
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .doc-section li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #e94560;
+            font-weight: bold;
+        }
+
+        .pricing-table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+
+        .pricing-table th,
+        .pricing-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(233, 69, 96, 0.2);
+            color: #b8b8c8;
+        }
+
+        .pricing-table th {
+            background: rgba(233, 69, 96, 0.1);
+            color: #e94560;
+            font-weight: 600;
+        }
+
+        .pricing-table tr:hover {
+            background: rgba(233, 69, 96, 0.05);
+        }
+
+        .price-highlight {
+            color: #e94560;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .feature-item {
+            padding: 15px;
+            background: rgba(233, 69, 96, 0.08);
+            border: 1px solid rgba(233, 69, 96, 0.15);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .feature-item i {
+            font-size: 1.8rem;
+            color: #e94560;
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.1), rgba(255, 107, 157, 0.05));
+            border: 2px solid #e94560;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .contact-box h3 {
+            margin-top: 0;
+        }
+
+        .contact-box a {
+            color: #e94560;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-box a:hover {
+            color: #ff6b9d;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(233, 69, 96, 0.15);
+            color: #e94560;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .back-button:hover {
+            background: rgba(233, 69, 96, 0.25);
+            transform: translateX(-4px);
+        }
+
+        @media (max-width: 768px) {
+            .doc-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .doc-section {
+                padding: 20px;
+            }
+
+            .pricing-table th,
+            .pricing-table td {
+                padding: 8px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-music"></i> JOHN ADAR
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#music" class="nav-link">Music</a></li>
+                <li><a href="index.html#tour" class="nav-link">Tour</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="index.html#donate" class="nav-link donate-nav">Donate</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Documentation Content -->
+    <section style="padding-top: 100px; background-color: #0f0f1e; min-height: 100vh;">
+        <div class="doc-container">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+
+            <div class="doc-header">
+                <h1>🎵 John Adar Music</h1>
+                <p>Official Documentation & Guide</p>
+            </div>
+
+            <!-- About Section -->
+            <div class="doc-section">
+                <h2><i class="fas fa-user-music"></i> About John Adar</h2>
+                <p>John Adar is a contemporary music artist known for blending modern production with soulful melodies. With a passion for creating authentic and emotionally resonant music, John has captivated audiences worldwide with his unique sound and dynamic performances.</p>
+                
+                <h3>Artist Statistics</h3>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-play-circle"></i>
+                        <p><strong>2M+</strong><br>Streams</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-microphone"></i>
+                        <p><strong>50+</strong><br>Live Shows</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-compact-disc"></i>
+                        <p><strong>15</strong><br>Releases</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-globe"></i>
+                        <p><strong>Worldwide</strong><br>Audience</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour Dates Section -->
+            <div class="doc-section">
+                <h2><i class="fas fa-calendar"></i> Upcoming Tour Dates</h2>
+                <p>Experience John Adar live across India. Book your tickets now for an unforgettable musical experience.</p>
+                
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>City</th>
+                            <th>Venue</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Kohima</strong></td>
+                            <td>Nagaland Convention Center</td>
+                            <td>JUN 15</td>
+                            <td><span class="price-highlight">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dimapur</strong></td>
+                            <td>Dimapur Auditorium</td>
+                            <td>JUN 22</td>
+                            <td><span class="price-highlight">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Itanagar</strong></td>
+                            <td>Arunachal Pradesh Convention Hall</td>
+                            <td>JUL 05</td>
+                            <td><span class="price-highlight">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bangalore</strong></td>
+                            <td>Bangalore Convention Center</td>
+                            <td>JUL 12</td>
+                            <td><span class="price-highlight">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Guwahati</strong></td>
+                            <td>Guwahati Auditorium</td>
+                            <td>JUL 19</td>
+                            <td><span class="price-highlight">Available</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Ticket Pricing Section -->
+            <div class="doc-section">
+                <h2><i class="fas fa-ticket-alt"></i> Event Tickets</h2>
+                <p>Choose from two ticket options for all John Adar concerts:</p>
+                
+                <h3>🎭 Gallery Ticket – <span class="price-highlight">₹500</span></h3>
+                <ul>
+                    <li>Standard seating</li>
+                    <li>Full concert access</li>
+                    <li>Professional sound system</li>
+                    <li>Comfortable venue</li>
+                </ul>
+
+                <h3>⭐ VIP Ticket – <span class="price-highlight">₹2500</span></h3>
+                <ul>
+                    <li>Premium front-row seating</li>
+                    <li>Exclusive meet & greet with John Adar</li>
+                    <li>Priority entry</li>
+                    <li>VIP lounge access</li>
+                    <li>Limited availability</li>
+                </ul>
+
+                <p style="margin-top: 20px; padding: 15px; background: rgba(233, 69, 96, 0.1); border-left: 3px solid #e94560; border-radius: 4px;">
+                    <strong>💡 Tip:</strong> VIP tickets are limited and often sell out quickly. Book early to secure your premium experience!
+                </p>
+            </div>
+
+            <!-- Merchandise Section -->
+            <div class="doc-section">
+                <h2><i class="fas fa-shopping-bag"></i> Official Merchandise</h2>
+                <p>Wear the music with official John Adar branded merchandise.</p>
+                
+                <h3>John Adar Music T-Shirt – <span class="price-highlight">₹1000</span></h3>
+                <ul>
+                    <li>Premium quality fabric</li>
+                    <li>Full front design print</li>
+                    <li>Comfortable fit</li>
+                    <li>Available sizes: XS, S, M, L, XL, XXL</li>
+                    <li>Official merchandise</li>
+                </ul>
+
+                <p style="margin-top: 20px; padding: 15px; background: rgba(233, 69, 96, 0.1); border-left: 3px solid #e94560; border-radius: 4px;">
+                    <strong>📦 Note:</strong> XXL size is ₹1050 due to additional fabric. All merchandise is shipped securely with tracking.
+                </p>
+            </div>
+
+            <!-- Donations Section -->
+            <div class="doc-section">
+                <h2><i class="fas fa-heart"></i> Support the Music</h2>
+                <p>Love John Adar's music? Support the artist directly through donations. Every rupee helps fund new music production, tour dates, and creative projects.</p>
+                
+                <h3>Donation Options</h3>
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Amount</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="price-highlight">₹100</span></td>
+                            <td>Coffee & Inspiration – Support daily creativity</td>
+                        </tr>
+                        <tr>
+                            <td><span class="price-highlight">₹500</span></td>
+                            <td>Album Support – Help fund new music production</td>
+                        </tr>
+                        <tr>
+                            <td><span class="price-highlight">₹1000</span></td>
+                            <td>Production Support – Studio time & equipment</td>
+                        </tr>
+                        <tr>
+                            <td><span class="price-highlight">₹5000</span></td>
+                            <td>Tour Support – Help bring music to more cities</td>
+                        </tr>
+                        <tr>
+                            <td><span class="price-highlight">Custom</span></td>
+                            <td>Your choice – Donate any amount you wish</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p style="margin-top: 20px; padding: 15px; background: rgba(233, 69, 96, 0.1); border-left: 3px solid #e94560; border-radius: 4px;">
+                    <strong>🙏 Thank You:</strong> All donations are secure and processed through Razorpay. Your support directly impacts the creation of new music and live performances.
+                </p>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="doc-section">
+                <h2><i class="fas fa-envelope"></i> Contact & Booking</h2>
+                <p>For booking inquiries, collaborations, or any questions about tours, merchandise, or donations:</p>
+                
+                <div class="contact-box">
+                    <h3>Manager Contact</h3>
+                    <p>
+                        <strong>Email:</strong> <a href="mailto:kshohe11@gmail.com">kshohe11@gmail.com</a><br>
+                        <strong>Phone:</strong> <a href="tel:+918413892525">+91 8413892525</a>
+                    </p>
+                </div>
+
+                <div class="contact-box">
+                    <h3>Artist Direct</h3>
+                    <p>
+                        <strong>Phone:</strong> <a href="tel:+917630995202">+91 76309 95202</a><br>
+                        <strong>Location:</strong> North East India
+                    </p>
+                </div>
+            </div>
+
+            <!-- Payment & Security Section -->
+            <div class="doc-section">
+                <h2><i class="fas fa-lock"></i> Payment & Security</h2>
+                <p>All transactions on this platform are secure and encrypted.</p>
+                
+                <h3>Payment Methods</h3>
+                <ul>
+                    <li><strong>Razorpay Integration:</strong> Secure payment gateway for tickets, merchandise, and donations</li>
+                    <li><strong>Multiple Payment Options:</strong> Credit cards, debit cards, UPI, net banking</li>
+                    <li><strong>Encryption:</strong> All transactions are SSL encrypted</li>
+                    <li><strong>Privacy:</strong> Your personal information is never shared</li>
+                </ul>
+
+                <h3>Ticket Delivery</h3>
+                <ul>
+                    <li>Digital tickets are generated immediately after payment</li>
+                    <li>Tickets are sent to your email address</li>
+                    <li>Download and save your ticket for the event</li>
+                    <li>Present the ticket at the venue entrance</li>
+                </ul>
+            </div>
+
+            <!-- Website Features Section -->
+            <div class="doc-section">
+                <h2><i class="fas fa-globe"></i> Website Features</h2>
+                <p>This platform is built with modern technology to provide the best user experience:</p>
+                
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-film"></i>
+                        <p><strong>Music & Videos</strong><br>Latest releases & videos</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <p><strong>Tour Dates</strong><br>Upcoming events</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p><strong>E-Commerce</strong><br>Merchandise store</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-heart"></i>
+                        <p><strong>Donations</strong><br>Support the artist</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-envelope"></i>
+                        <p><strong>Contact Form</strong><br>Direct messaging</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <p><strong>Mobile Friendly</strong><br>Works on all devices</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="doc-section">
+                <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+                
+                <h3>How do I book tickets?</h3>
+                <p>Visit the Tour section on the homepage, select your preferred city and date, choose between Gallery or VIP tickets, and complete the payment. Your ticket will be generated immediately.</p>
+
+                <h3>Can I get a refund?</h3>
+                <p>Refund policies vary by event. Please contact the manager at <a href="mailto:kshohe11@gmail.com">kshohe11@gmail.com</a> for refund inquiries.</p>
+
+                <h3>Is my payment secure?</h3>
+                <p>Yes! All payments are processed through Razorpay, a trusted payment gateway with SSL encryption. Your personal information is never stored on our servers.</p>
+
+                <h3>How do I receive my merchandise?</h3>
+                <p>Merchandise orders are shipped to your address with tracking. Delivery typically takes 5-7 business days within India.</p>
+
+                <h3>Can I donate anonymously?</h3>
+                <p>Yes! You can donate without providing personal information. However, providing your email helps us send you updates about new music and events.</p>
+
+                <h3>How can I get in touch with John Adar?</h3>
+                <p>For bookings and inquiries, contact the manager at <a href="mailto:kshohe11@gmail.com">kshohe11@gmail.com</a> or call <a href="tel:+918413892525">+91 8413892525</a>.</p>
+            </div>
+
+            <!-- Footer Info -->
+            <div class="doc-section" style="text-align: center; border: none; background: transparent;">
+                <p style="color: #b8b8c8; font-size: 0.9rem;">
+                    © 2024 John Adar. All rights reserved.<br>
+                    <a href="index.html" style="color: #e94560; text-decoration: none;">← Back to Home</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
