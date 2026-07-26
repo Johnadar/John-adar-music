@@ -23,6 +23,13 @@
     <title>John Adar - Music Artist | Concert Tickets & Music</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Modern Performance & Caching -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://checkout.razorpay.com">
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
+    <meta name="theme-color" content="#e94560">
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7WXM7ER3GV"></script>
     <script>
@@ -40,6 +47,12 @@
       "url": "https://johnadar.github.io/John-adar-music/",
       "description": "Contemporary music artist from India. Listen to latest releases including 'Midnight Dreams' and book concert tickets.",
       "genre": "Contemporary",
+      "image": "https://johnadar.github.io/John-adar-music/favicon.ico",
+      "sameAs": [
+        "https://www.youtube.com/channel/UCkeyChannel",
+        "https://www.spotify.com/artist/johnadar",
+        "https://www.instagram.com/johnadar"
+      ],
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+91-76309-95202",
@@ -711,5 +724,20 @@
         }
             }    </script>
     <script src="script.js"></script>
+    
+    <!-- Service Worker Registration for Caching & Offline Support -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('sw.js')
+            .then(registration => {
+              console.log('Service Worker registered successfully:', registration);
+            })
+            .catch(error => {
+              console.log('Service Worker registration failed:', error);
+            });
+        });
+      }
+    </script>
 </body>
 </html>
