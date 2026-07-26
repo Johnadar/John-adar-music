@@ -15,6 +15,19 @@
         </image:image>
     </url>
     
+    <!-- About Section with Performance Photo -->
+    <url>
+        <loc>https://johnadar.github.io/John-adar-music/#about</loc>
+        <lastmod>2024-07-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://johnadar.github.io/John-adar-music/john-adar-performance.jpg</image:loc>
+            <image:title>John Adar Live Performance at Music Institute</image:title>
+            <image:caption>John Adar performing live with professional guitar at Music Institute</image:caption>
+        </image:image>
+    </url>
+    
     <!-- Documentation Page -->
     <url>
         <loc>https://johnadar.github.io/John-adar-music/documentation.html</loc>
@@ -26,14 +39,6 @@
             <image:title>John Adar - Music Artist Profile</image:title>
             <image:caption>Official profile photo of John Adar</image:caption>
         </image:image>
-    </url>
-    
-    <!-- About Section -->
-    <url>
-        <loc>https://johnadar.github.io/John-adar-music/#about</loc>
-        <lastmod>2024-07-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
     </url>
     
     <!-- Music Section -->
