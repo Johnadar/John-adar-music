@@ -1,0 +1,53 @@
+# John Adar Music Artist - .htaccess
+
+# Enable compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Set cache headers for images
+<FilesMatch "\.(jpg|jpeg|png|gif|webp)$">
+  Header set Cache-Control "max-age=31536000, public"
+  Header set Expires "Wed, 20 Jan 2027 04:20:42 GMT"
+</FilesMatch>
+
+# Set cache headers for videos
+<FilesMatch "\.(mp4|webm|ogv)$">
+  Header set Cache-Control "max-age=2592000, public"
+  Header set Expires "Wed, 20 Aug 2026 04:20:42 GMT"
+</FilesMatch>
+
+# Set cache headers for CSS and JS
+<FilesMatch "\.(css|js)$">
+  Header set Cache-Control "max-age=604800, public"
+  Header set Expires "Wed, 05 Aug 2026 04:20:42 GMT"
+</FilesMatch>
+
+# Set cache headers for HTML
+<FilesMatch "\.(html|htm)$">
+  Header set Cache-Control "max-age=3600, public"
+</FilesMatch>
+
+# Enable GZIP compression
+<IfModule mod_gzip.c>
+  mod_gzip_on Yes
+  mod_gzip_dechunk Yes
+  mod_gzip_item_include file \.(html?|txt|css|js|json|xml|svg)$
+  mod_gzip_item_include mime ^application/x-javascript$
+  mod_gzip_item_include mime ^text/.*
+  mod_gzip_item_exclude mime ^image/
+  mod_gzip_minimum_file_size 500
+</IfModule>
+
+# Remove ETags for better caching
+Header unset ETag
+FileETag None
+
+# Set proper MIME types
+AddType image/svg+xml svg svgz
+AddEncoding gzip svgz
+
+# Redirect HTTP to HTTPS (if needed)
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

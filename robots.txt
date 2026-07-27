@@ -1,17 +1,22 @@
+# John Adar Music Artist - robots.txt
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /private/
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.png
+Allow: *.gif
+Allow: *.mp4
+Allow: *.webm
 
+# Disallow unnecessary files
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /*.json$
+
+# Sitemaps
 Sitemap: https://johnadar.github.io/John-adar-music/sitemap.xml
+Sitemap: https://johnadar.github.io/John-adar-music/sitemap-images.xml
+Sitemap: https://johnadar.github.io/John-adar-music/sitemap-videos.xml
 
-# Google
-User-agent: Googlebot
-Allow: /
-
-# Bing
-User-agent: Bingbot
-Allow: /
-
-# Crawl delay
-Crawl-delay: 1
+# Crawl delay (optional)
+Crawl-delay: 0
