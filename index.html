@@ -17,6 +17,10 @@
     <meta property="og:image:height" content="1212">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:alt" content="John Adar Music Artist in Studio">
+    <meta property="og:video" content="https://johnadar.github.io/John-adar-music/john-adar-hero-video.mp4">
+    <meta property="og:video:type" content="video/mp4">
+    <meta property="og:video:width" content="1280">
+    <meta property="og:video:height" content="720">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="John Adar Music Artist">
     <meta name="twitter:description" content="John Adar Music Artist - Discover music, tour dates, and exclusive merchandise.">
@@ -110,11 +114,19 @@
       "@type": "VideoObject",
       "name": "John Adar - Music Performance",
       "description": "John Adar performing his latest music. Contemporary music artist blending modern production with soulful melodies.",
-      "thumbnailUrl": "https://johnadar.github.io/John-adar-music/john-adar-artist.jpg",
+      "thumbnailUrl": [
+        "https://johnadar.github.io/John-adar-music/john-adar-artist.jpg",
+        "https://johnadar.github.io/John-adar-music/john-adar-performance.jpg"
+      ],
       "uploadDate": "2024-07-26",
       "duration": "PT5M",
       "contentUrl": "https://johnadar.github.io/John-adar-music/john-adar-music.mp4",
       "embedUrl": "https://johnadar.github.io/John-adar-music/",
+      "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": "http://schema.org/WatchAction",
+        "userInteractionCount": "2000000"
+      },
       "creator": {
         "@type": "Person",
         "name": "John Adar"
@@ -147,6 +159,69 @@
         "url": "https://johnadar.github.io/John-adar-music/#about",
         "name": "About John Adar"
       }
+    }
+    </script>
+    <!-- JSON-LD Hero Video Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "John Adar - Hero Performance Video",
+      "description": "John Adar's latest music performance video. Contemporary music artist performing with professional guitar setup.",
+      "thumbnailUrl": [
+        "https://johnadar.github.io/John-adar-music/john-adar-artist.jpg",
+        "https://johnadar.github.io/John-adar-music/john-adar-performance.jpg"
+      ],
+      "uploadDate": "2024-07-30",
+      "duration": "PT5M",
+      "contentUrl": "https://johnadar.github.io/John-adar-music/john-adar-hero-video.mp4",
+      "embedUrl": "https://johnadar.github.io/John-adar-music/",
+      "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": "http://schema.org/WatchAction",
+        "userInteractionCount": "2000000"
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "John Adar"
+      },
+      "isPartOf": {
+        "@type": "WebPage",
+        "url": "https://johnadar.github.io/John-adar-music/",
+        "name": "John Adar Music Artist"
+      }
+    }
+    </script>
+    <!-- Collection Schema for All Media -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "John Adar Music - Photos & Videos",
+      "description": "Collection of photos and videos of John Adar, contemporary music artist",
+      "url": "https://johnadar.github.io/John-adar-music/",
+      "mainEntity": [
+        {
+          "@type": "ImageObject",
+          "name": "John Adar Studio Photo",
+          "url": "https://johnadar.github.io/John-adar-music/john-adar-artist.jpg"
+        },
+        {
+          "@type": "ImageObject",
+          "name": "John Adar Live Performance",
+          "url": "https://johnadar.github.io/John-adar-music/john-adar-performance.jpg"
+        },
+        {
+          "@type": "VideoObject",
+          "name": "John Adar Music Video",
+          "url": "https://johnadar.github.io/John-adar-music/john-adar-music.mp4"
+        },
+        {
+          "@type": "VideoObject",
+          "name": "John Adar Hero Video",
+          "url": "https://johnadar.github.io/John-adar-music/john-adar-hero-video.mp4"
+        }
+      ]
     }
     </script>
 </head>
