@@ -57,6 +57,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    width: 100%;
 }
 
 .nav-logo {
@@ -77,13 +79,14 @@ body {
 }
 
 .nav-menu.active {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 70px;
     left: 0;
     right: 0;
-    background-color: rgba(15, 15, 30, 0.95);
+    width: 100vw;
+    background-color: rgba(15, 15, 30, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-color);
@@ -91,6 +94,7 @@ body {
     padding: 1.5rem 0;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     animation: slideDown 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 999;
 }
 
 @keyframes slideDown {
@@ -1078,13 +1082,31 @@ section {
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
-        display: none;
+        display: none !important;
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background-color: rgba(15, 15, 30, 0.98);
+        gap: 0;
+        padding: 1.5rem 0;
+        z-index: 999;
+    }
+    
+    .nav-menu.active {
+        display: flex !important;
     }
 
     .hamburger {
-        display: flex;
+        display: flex !important;
     }
 
+    .nav-container {
+        position: relative;
+    }
+    
     .hero-title {
         font-size: 3rem;
     }
