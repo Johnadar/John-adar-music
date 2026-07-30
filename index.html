@@ -277,15 +277,22 @@
                 </div>
                 <div class="hero-donate">
                     <p class="appointment-label">Support the Music</p>
+                    <div style="margin-bottom: 10px;">
+                        <p style="font-size: 0.85rem; color: #b8b8c8; margin-bottom: 8px;">Choose Payment Method:</p>
+                        <div style="display: flex; gap: 8px; margin-bottom: 10px;">
+                            <button class="donate-btn-small" onclick="setPaymentMethod('razorpay')" id="razorpay-btn" style="flex: 1; background: #e94560; border: 2px solid #e94560;">Razorpay</button>
+                            <button class="donate-btn-small" onclick="setPaymentMethod('upi')" id="upi-btn" style="flex: 1; background: transparent; border: 2px solid #e94560; color: #e94560;">UPI</button>
+                        </div>
+                    </div>
                     <div class="hero-donate-buttons">
-                        <button class="donate-btn-small" onclick="initiateRazorpayDonation(100)">₹100</button>
-                        <button class="donate-btn-small" onclick="initiateRazorpayDonation(500)">₹500</button>
-                        <button class="donate-btn-small" onclick="initiateRazorpayDonation(1000)">₹1000</button>
-                        <button class="donate-btn-small" onclick="initiateRazorpayDonation(5000)">₹5000</button>
+                        <button class="donate-btn-small" onclick="initiateDonation(100)">₹100</button>
+                        <button class="donate-btn-small" onclick="initiateDonation(500)">₹500</button>
+                        <button class="donate-btn-small" onclick="initiateDonation(1000)">₹1000</button>
+                        <button class="donate-btn-small" onclick="initiateDonation(5000)">₹5000</button>
                     </div>
                     <div style="margin-top: 10px;">
                         <input type="number" id="customDonationAmount" placeholder="Enter custom amount" min="1" style="width: 100%; padding: 10px; border: 2px solid #e94560; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
-                        <button class="donate-btn-small" onclick="initiateRazorpayDonation(document.getElementById('customDonationAmount').value)" style="margin-top: 8px; width: 100%; background: #ff6b9d;">Donate Custom Amount</button>
+                        <button class="donate-btn-small" onclick="initiateDonation(document.getElementById('customDonationAmount').value)" style="margin-top: 8px; width: 100%; background: #ff6b9d;">Donate</button>
                     </div>
                 <div class="hero-merchandise">
                     <p class="appointment-label">Official Merchandise</p>
@@ -504,6 +511,68 @@
 
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
+        // UPI Configuration
+        const UPI_ID = '7578842926-8@ybl';
+        let currentPaymentMethod = 'razorpay';
+        
+        // Set payment method
+        function setPaymentMethod(method) {
+            currentPaymentMethod = method;
+            const razorpayBtn = document.getElementById('razorpay-btn');
+            const upiBtn = document.getElementById('upi-btn');
+            
+            if (method === 'razorpay') {
+                razorpayBtn.style.background = '#e94560';
+                razorpayBtn.style.color = 'white';
+                upiBtn.style.background = 'transparent';
+                upiBtn.style.color = '#e94560';
+            } else {
+                razorpayBtn.style.background = 'transparent';
+                razorpayBtn.style.color = '#e94560';
+                upiBtn.style.background = '#e94560';
+                upiBtn.style.color = 'white';
+            }
+        }
+        
+        // Unified donation handler
+        function initiateDonation(amount) {
+            if (!amount || amount <= 0) {
+                alert('Please enter a valid amount');
+                return;
+            }
+            
+            if (currentPaymentMethod === 'upi') {
+                initiateUPIDonation(amount);
+            } else {
+                initiateRazorpayDonation(amount);
+            }
+        }
+        
+        // UPI Payment Handler
+        function initiateUPIDonation(amount) {
+            const upiLink = `upi://pay?pa=${UPI_ID}&pn=John%20Adar%20Music&am=${amount}&tn=Donation%20to%20John%20Adar%20Music&tr=${Date.now()}`;
+            
+            const modal = document.createElement('div');
+            modal.id = 'upiDonationModal';
+            modal.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 10000;';
+            
+            modal.innerHTML = `
+                <div style="background: white; padding: 40px; border-radius: 15px; max-width: 500px; width: 90%; box-shadow: 0 10px 40px rgba(0,0,0,0.3); text-align: center;">
+                    <h2 style="color: #e94560; margin-bottom: 20px; font-size: 24px;">UPI Payment</h2>
+                    <p style="color: #666; margin-bottom: 15px; font-size: 14px;">Donation Amount: <strong style="font-size: 20px; color: #e94560;">₹${amount}</strong></p>
+                    <p style="color: #999; margin-bottom: 20px; font-size: 12px;">UPI ID: <strong>${UPI_ID}</strong></p>
+                    <div style="background: #f5f5f5; padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+                        <p style="color: #666; margin: 0; font-size: 13px;">Click the button below to open your UPI app</p>
+                    </div>
+                    <button onclick="window.location.href='${upiLink}'; document.getElementById('upiDonationModal').remove();" style="width: 100%; padding: 15px; background: #e94560; color: white; border: none; border-radius: 8px; font-weight: bold; font-size: 16px; cursor: pointer; margin-bottom: 10px;">Open UPI App</button>
+                    <button onclick="document.getElementById('upiDonationModal').remove();" style="width: 100%; padding: 12px; background: #ddd; color: #333; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">Cancel</button>
+                    <p style="color: #999; margin-top: 15px; font-size: 12px;">After payment, you can close this window</p>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+        }
+        
         function initiateRazorpayDonation(amount) {
             if (!amount || amount <= 0) {
                 alert('Please enter a valid amount');
