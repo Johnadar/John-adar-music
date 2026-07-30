@@ -40,7 +40,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-    <link rel="dns-prefetch" href="https://checkout.razorpay.com">
+    <!-- Razorpay DNS prefetch removed -->
+    <!-- <link rel="dns-prefetch" href="https://checkout.razorpay.com"> -->
     <meta http-equiv="Cache-Control" content="public, max-age=31536000">
     <meta name="theme-color" content="#e94560">
     <!-- Google Analytics -->
@@ -277,22 +278,16 @@
                 </div>
                 <div class="hero-donate">
                     <p class="appointment-label">Support the Music</p>
-                    <div style="margin-bottom: 10px;">
-                        <p style="font-size: 0.85rem; color: #b8b8c8; margin-bottom: 8px;">Choose Payment Method:</p>
-                        <div style="display: flex; gap: 8px; margin-bottom: 10px;">
-                            <button class="donate-btn-small" onclick="setPaymentMethod('razorpay')" id="razorpay-btn" style="flex: 1; background: #e94560; border: 2px solid #e94560;">Razorpay</button>
-                            <button class="donate-btn-small" onclick="setPaymentMethod('upi')" id="upi-btn" style="flex: 1; background: transparent; border: 2px solid #e94560; color: #e94560;">UPI</button>
-                        </div>
-                    </div>
+                    <p style="font-size: 0.85rem; color: #b8b8c8; margin-bottom: 15px; text-align: center;">Pay via UPI</p>
                     <div class="hero-donate-buttons">
-                        <button class="donate-btn-small" onclick="initiateDonation(100)">₹100</button>
-                        <button class="donate-btn-small" onclick="initiateDonation(500)">₹500</button>
-                        <button class="donate-btn-small" onclick="initiateDonation(1000)">₹1000</button>
-                        <button class="donate-btn-small" onclick="initiateDonation(5000)">₹5000</button>
+                        <button class="donate-btn-small" onclick="initiateUPIDonation(100)">₹100</button>
+                        <button class="donate-btn-small" onclick="initiateUPIDonation(500)">₹500</button>
+                        <button class="donate-btn-small" onclick="initiateUPIDonation(1000)">₹1000</button>
+                        <button class="donate-btn-small" onclick="initiateUPIDonation(5000)">₹5000</button>
                     </div>
                     <div style="margin-top: 10px;">
                         <input type="number" id="customDonationAmount" placeholder="Enter custom amount" min="1" style="width: 100%; padding: 10px; border: 2px solid #e94560; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
-                        <button class="donate-btn-small" onclick="initiateDonation(document.getElementById('customDonationAmount').value)" style="margin-top: 8px; width: 100%; background: #ff6b9d;">Donate</button>
+                        <button class="donate-btn-small" onclick="initiateUPIDonation(document.getElementById('customDonationAmount').value)" style="margin-top: 8px; width: 100%; background: #ff6b9d;">Donate via UPI</button>
                     </div>
                 <div class="hero-merchandise">
                     <p class="appointment-label">Official Merchandise</p>
@@ -509,44 +504,11 @@
         </div>
     </footer>
 
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <!-- Razorpay removed - UPI only payment -->
+    <!-- <script src="https://checkout.razorpay.com/v1/checkout.js"></script> -->
     <script>
         // UPI Configuration
         const UPI_ID = '7578842926-8@ybl';
-        let currentPaymentMethod = 'razorpay';
-        
-        // Set payment method
-        function setPaymentMethod(method) {
-            currentPaymentMethod = method;
-            const razorpayBtn = document.getElementById('razorpay-btn');
-            const upiBtn = document.getElementById('upi-btn');
-            
-            if (method === 'razorpay') {
-                razorpayBtn.style.background = '#e94560';
-                razorpayBtn.style.color = 'white';
-                upiBtn.style.background = 'transparent';
-                upiBtn.style.color = '#e94560';
-            } else {
-                razorpayBtn.style.background = 'transparent';
-                razorpayBtn.style.color = '#e94560';
-                upiBtn.style.background = '#e94560';
-                upiBtn.style.color = 'white';
-            }
-        }
-        
-        // Unified donation handler
-        function initiateDonation(amount) {
-            if (!amount || amount <= 0) {
-                alert('Please enter a valid amount');
-                return;
-            }
-            
-            if (currentPaymentMethod === 'upi') {
-                initiateUPIDonation(amount);
-            } else {
-                initiateRazorpayDonation(amount);
-            }
-        }
         
         // UPI Payment Handler
         function initiateUPIDonation(amount) {
@@ -573,11 +535,12 @@
             document.body.appendChild(modal);
         }
         
-        function initiateRazorpayDonation(amount) {
-            if (!amount || amount <= 0) {
-                alert('Please enter a valid amount');
-                return;
-            }
+        // Razorpay functions removed - UPI only
+        // function initiateRazorpayDonation(amount) {
+        //     if (!amount || amount <= 0) {
+        //         alert('Please enter a valid amount');
+        //         return;
+        //     }
             
             // Create donation form modal
             const modal = document.createElement('div');
