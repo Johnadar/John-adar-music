@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    
+    <!-- Home Page with Music Video -->
+    <url>
+        <loc>https://johnadar.github.io/John-adar-music/</loc>
+        <lastmod>2024-07-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <video:video>
+            <video:thumbnail_loc>https://johnadar.github.io/John-adar-music/john-adar-artist.jpg</video:thumbnail_loc>
+            <video:title>John Adar - Music Performance</video:title>
+            <video:description>John Adar performing his latest music. Contemporary music artist blending modern production with soulful melodies.</video:description>
+            <video:content_loc>https://johnadar.github.io/John-adar-music/john-adar-hero-video.mp4</video:content_loc>
+            <video:player_loc>https://johnadar.github.io/John-adar-music/</video:player_loc>
+            <video:duration>300</video:duration>
+            <video:upload_date>2024-07-30</video:upload_date>
+            <video:tag>music</video:tag>
+            <video:tag>artist</video:tag>
+            <video:tag>contemporary</video:tag>
+            <video:tag>performance</video:tag>
+            <video:category>Music</video:category>
+        </video:video>
+    </url>
+    
+</urlset>
