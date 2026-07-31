@@ -3,35 +3,542 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="John Adar Music Artist - Discover John Adar's music, tour dates, and exclusive merchandise. Contemporary music artist with concerts across India.">
+    <meta name="description" content="John Adar Music Artist - Discover John Adar's music, tour dates, and exclusive merchandise.">
     <meta name="keywords" content="John Adar, music artist, contemporary music, concerts, tour dates">
     <meta name="author" content="John Adar">
-    <meta property="og:title" content="John Adar Music Artist - Contemporary Music">
-    <meta property="og:description" content="John Adar Music Artist - Discover John Adar's music, tour dates, and exclusive merchandise. Contemporary music artist with concerts across India.">
+    <meta property="og:title" content="John Adar Music Artist">
+    <meta property="og:description" content="John Adar Music Artist - Contemporary music with 2M+ streams">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://johnadar.github.io/John-adar-music/">
     <meta property="og:image" content="https://johnadar.github.io/John-adar-music/john-adar-artist.jpg">
-    <meta property="og:image:width" content="960">
-    <meta property="og:image:height" content="1212">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:alt" content="John Adar Music Artist in Studio">
-    <meta property="og:video" content="https://johnadar.github.io/John-adar-music/john-adar-hero-video.mp4">
-    <meta property="og:video:type" content="video/mp4">
-    <meta property="og:video:width" content="1280">
-    <meta property="og:video:height" content="720">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="John Adar Music Artist">
-    <meta name="twitter:description" content="John Adar Music Artist - Discover music, tour dates, and exclusive merchandise.">
-    <meta name="twitter:image" content="https://johnadar.github.io/John-adar-music/john-adar-artist.jpg">
-    <title>John Adar Music Artist | Contemporary Music | Concert Tickets</title>
+    <title>John Adar Music Artist | Contemporary Music</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
-    <meta name="theme-color" content="#e94560">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #0f0f1e 100%);
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(15, 15, 30, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(233, 69, 96, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #e94560;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #f0f0f0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            color: #e94560;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #e94560;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(15, 15, 30, 0.98);
+                flex-direction: column;
+                gap: 0;
+                padding: 20px 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .nav-menu.active {
+                max-height: 500px;
+            }
+
+            .nav-link {
+                padding: 15px 20px;
+                border-bottom: 1px solid rgba(233, 69, 96, 0.1);
+                width: 100%;
+                display: block;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #e94560;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            color: #b8b8c8;
+            margin-bottom: 40px;
+        }
+
+        .hero-media-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero-media-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .hero-photo img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 12px 40px rgba(233, 69, 96, 0.2);
+            width: 100%;
+        }
+
+        .hero-video-container video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 12px 40px rgba(233, 69, 96, 0.2);
+            width: 100%;
+        }
+
+        .hero-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero-actions {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .hero-contact, .hero-donate {
+            background: rgba(233, 69, 96, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(233, 69, 96, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .appointment-label {
+            font-size: 1.1rem;
+            color: #e94560;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .appointment-whatsapp, .appointment-phone {
+            display: block;
+            padding: 12px;
+            margin: 8px 0;
+            background: #e94560;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .appointment-whatsapp:hover, .appointment-phone:hover {
+            background: #ff6b9d;
+            transform: translateY(-2px);
+        }
+
+        .hero-donate-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .donate-btn-small {
+            padding: 10px;
+            background: #e94560;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .donate-btn-small:hover {
+            background: #ff6b9d;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: #e94560;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        /* About Section */
+        .about {
+            background: rgba(26, 26, 46, 0.5);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: #b8b8c8;
+            line-height: 1.8;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: rgba(233, 69, 96, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(233, 69, 96, 0.2);
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            color: #e94560;
+            margin-bottom: 10px;
+        }
+
+        .stat-card p {
+            color: #b8b8c8;
+        }
+
+        /* Releases Section */
+        .releases {
+            background: rgba(15, 15, 30, 0.5);
+        }
+
+        .releases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .release-card {
+            background: rgba(26, 26, 46, 0.8);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(233, 69, 96, 0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .release-card:hover {
+            border-color: #e94560;
+            transform: translateY(-5px);
+        }
+
+        .release-card h3 {
+            color: #e94560;
+            margin-bottom: 10px;
+        }
+
+        .release-card p {
+            color: #b8b8c8;
+            font-size: 0.9rem;
+        }
+
+        /* Tour Section */
+        .tour {
+            background: rgba(26, 26, 46, 0.5);
+        }
+
+        .tour-table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow-x: auto;
+        }
+
+        .tour-table th, .tour-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(233, 69, 96, 0.2);
+        }
+
+        .tour-table th {
+            background: rgba(233, 69, 96, 0.1);
+            color: #e94560;
+            font-weight: 600;
+        }
+
+        .tour-table td {
+            color: #b8b8c8;
+        }
+
+        /* Merchandise Section */
+        .merchandise {
+            background: rgba(15, 15, 30, 0.5);
+        }
+
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .merch-card {
+            background: rgba(26, 26, 46, 0.8);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(233, 69, 96, 0.2);
+            text-align: center;
+        }
+
+        .merch-card h3 {
+            color: #e94560;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .merch-price {
+            font-size: 1.5rem;
+            color: #e94560;
+            margin: 15px 0;
+            font-weight: 700;
+        }
+
+        .merch-btn {
+            padding: 12px 25px;
+            background: #e94560;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .merch-btn:hover {
+            background: #ff6b9d;
+            transform: translateY(-2px);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: rgba(26, 26, 46, 0.5);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-card {
+            background: rgba(233, 69, 96, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(233, 69, 96, 0.2);
+        }
+
+        .contact-card h3 {
+            color: #e94560;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .contact-card p {
+            color: #b8b8c8;
+            margin-bottom: 10px;
+        }
+
+        .contact-card a {
+            color: #e94560;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: #ff6b9d;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(15, 15, 30, 0.95);
+            border-top: 1px solid rgba(233, 69, 96, 0.1);
+            padding: 30px 20px;
+            text-align: center;
+            color: #b8b8c8;
+        }
+
+        .social-links {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: #e94560;
+            font-size: 1.3rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff6b9d;
+        }
+
+        /* UPI Modal */
+        #upiPaymentModal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #upiPaymentModal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        @media (max-width: 480px) {
+            .modal-content {
+                padding: 25px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -43,11 +550,11 @@
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#music" class="nav-link">Music</a></li>
+                <li><a href="#releases" class="nav-link">Releases</a></li>
                 <li><a href="#tour" class="nav-link">Tour</a></li>
+                <li><a href="#merchandise" class="nav-link">Merchandise</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
                 <li><a href="documentation.html" class="nav-link">Docs</a></li>
-                <li><a href="#donate" class="nav-link donate-nav">Donate</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -59,71 +566,48 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">JOHN ADAR MUSIC ARTIST</h1>
-            <p class="hero-subtitle">Contemporary Music | Live Performances | Original Releases</p>
-            
-            <div class="hero-media-container">
-                <div class="hero-photo">
-                    <img src="https://johnadar.github.io/John-adar-music/john-adar-artist.jpg" alt="John Adar Music Artist in Studio" loading="lazy">
-                </div>
-                
-                <div class="hero-video-container">
-                    <video width="600" height="400" controls poster="https://johnadar.github.io/John-adar-music/john-adar-artist.jpg" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 12px 40px rgba(233, 69, 96, 0.2);">
-                        <source src="https://johnadar.github.io/John-adar-music/john-adar-hero-video.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
+        <h1 class="hero-title">JOHN ADAR MUSIC ARTIST</h1>
+        <p class="hero-subtitle">Contemporary Music | Live Performances | Original Releases</p>
+        
+        <div class="hero-media-container">
+            <div class="hero-photo">
+                <img src="https://johnadar.github.io/John-adar-music/john-adar-artist.jpg" alt="John Adar Music Artist in Studio" loading="lazy">
             </div>
             
-            <div class="hero-actions">
-                <div class="hero-contact">
-                    <a href="https://wa.me/917630995202" class="appointment-whatsapp" target="_blank">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
-                    <a href="tel:+917630995202" class="appointment-phone">
-                        <i class="fas fa-phone"></i> +91 76309 95202
-                    </a>
+            <div class="hero-video-container">
+                <video width="100%" height="auto" controls poster="https://johnadar.github.io/John-adar-music/john-adar-artist.jpg">
+                    <source src="https://johnadar.github.io/John-adar-music/john-adar-hero-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        
+        <div class="hero-actions">
+            <div class="hero-contact">
+                <p class="appointment-label">Get in Touch</p>
+                <a href="https://wa.me/917630995202" class="appointment-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="tel:+917630995202" class="appointment-phone">
+                    <i class="fas fa-phone"></i> +91 76309 95202
+                </a>
+            </div>
+            <div class="hero-donate">
+                <p class="appointment-label">Support the Music</p>
+                <p style="font-size: 0.85rem; color: #b8b8c8; margin-bottom: 15px; text-align: center;">Pay via UPI</p>
+                <div class="hero-donate-buttons">
+                    <button class="donate-btn-small" onclick="showUPIPayment(100)">₹100</button>
+                    <button class="donate-btn-small" onclick="showUPIPayment(500)">₹500</button>
+                    <button class="donate-btn-small" onclick="showUPIPayment(1000)">₹1000</button>
+                    <button class="donate-btn-small" onclick="showUPIPayment(5000)">₹5000</button>
                 </div>
-                <div class="hero-donate">
-                    <p class="appointment-label">Support the Music</p>
-                    <p style="font-size: 0.85rem; color: #b8b8c8; margin-bottom: 15px; text-align: center;">Pay via UPI</p>
-                    <div class="hero-donate-buttons">
-                        <button class="donate-btn-small" onclick="showUPIPayment(100)">₹100</button>
-                        <button class="donate-btn-small" onclick="showUPIPayment(500)">₹500</button>
-                        <button class="donate-btn-small" onclick="showUPIPayment(1000)">₹1000</button>
-                        <button class="donate-btn-small" onclick="showUPIPayment(5000)">₹5000</button>
-                    </div>
-                    <div style="margin-top: 10px;">
-                        <input type="number" id="customDonationAmount" placeholder="Enter custom amount" min="1" style="width: 100%; padding: 10px; border: 2px solid #e94560; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
-                        <button class="donate-btn-small" onclick="showUPIPayment()" style="margin-top: 8px; width: 100%; background: #ff6b9d;">Donate via UPI</button>
-                    </div>
-                <div class="hero-merchandise">
-                    <p class="appointment-label">Official Merchandise</p>
-                    <button class="merch-btn" onclick="document.getElementById('merchandise-section').scrollIntoView({behavior: 'smooth'})">Shop T-Shirts</button>
-                </div>
+                <div style="margin-top: 10px;">
+                    <input type="number" id="customDonationAmount" placeholder="Enter custom amount" min="1" style="width: 100%; padding: 10px; border: 2px solid #e94560; border-radius: 8px; font-size: 14px; box-sizing: border-box; background: rgba(233,69,96,0.1); color: #f0f0f0;">
+                    <button class="donate-btn-small" onclick="showUPIPayment()" style="margin-top: 8px; width: 100%; background: #ff6b9d;">Donate via UPI</button>
                 </div>
             </div>
         </div>
-        <div class="hero-background"></div>
     </section>
-
-    <!-- UPI Payment Modal -->
-    <div id="upiPaymentModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; align-items: center; justify-content: center;">
-        <div style="background: white; padding: 40px; border-radius: 15px; max-width: 500px; width: 90%; box-shadow: 0 10px 40px rgba(0,0,0,0.5); text-align: center;">
-            <h2 style="color: #e94560; margin-bottom: 20px; font-size: 28px; font-weight: 700;">UPI Payment</h2>
-            <p style="color: #333; margin-bottom: 15px; font-size: 16px;">Donation Amount:</p>
-            <p style="color: #e94560; font-size: 32px; font-weight: 700; margin-bottom: 20px;" id="upiAmount">₹0</p>
-            <p style="color: #666; margin-bottom: 10px; font-size: 14px;">UPI ID:</p>
-            <p style="color: #333; font-family: monospace; font-weight: 600; margin-bottom: 20px; font-size: 16px;">7578842926-8@ybl</p>
-            <div style="background: #f5f5f5; padding: 15px; border-radius: 10px; margin-bottom: 20px;">
-                <p style="color: #666; margin: 0; font-size: 14px;">Click the button below to open your UPI app and complete payment</p>
-            </div>
-            <button onclick="processUPIPayment()" style="width: 100%; padding: 15px; background: #e94560; color: white; border: none; border-radius: 8px; font-weight: 600; font-size: 16px; cursor: pointer; margin-bottom: 10px; transition: all 0.3s ease;" onmouseover="this.style.background='#ff6b9d'" onmouseout="this.style.background='#e94560'">Open UPI App</button>
-            <button onclick="closeUPIModal()" style="width: 100%; padding: 12px; background: #ddd; color: #333; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='#ccc'" onmouseout="this.style.background='#ddd'">Cancel</button>
-            <p style="color: #999; margin-top: 15px; font-size: 12px;">After payment, you can close this window</p>
-        </div>
-    </div>
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -134,7 +618,7 @@
                     <p>John Adar is a contemporary music artist known for blending modern production with soulful melodies. With over 2 million streams and 50+ live performances, John Adar has established himself as a rising talent in the music industry.</p>
                     <p>His music spans multiple genres, from indie rock to electronic fusion, creating a unique sound that resonates with audiences across India and beyond.</p>
                 </div>
-                <img src="https://johnadar.github.io/John-adar-music/john-adar-performance.jpg" alt="John Adar Live Performance at Music Institute with Guitar" style="max-width: 500px; width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.2);">
+                <img src="https://johnadar.github.io/John-adar-music/john-adar-performance.jpg" alt="John Adar Live Performance at Music Institute with Guitar" loading="lazy">
             </div>
             <div class="about-stats">
                 <div class="stat-card">
@@ -153,70 +637,205 @@
         </div>
     </section>
 
+    <!-- Releases Section -->
+    <section id="releases" class="releases">
+        <div class="container">
+            <h2 class="section-title">Latest Releases</h2>
+            <div class="releases-grid">
+                <div class="release-card">
+                    <h3>Midnight Dreams</h3>
+                    <p>Electronic | 2024</p>
+                    <p style="font-size: 0.8rem; margin-top: 10px;">A journey through ambient soundscapes</p>
+                </div>
+                <div class="release-card">
+                    <h3>Urban Pulse</h3>
+                    <p>Indie Rock | 2024</p>
+                    <p style="font-size: 0.8rem; margin-top: 10px;">High-energy tracks with deep lyrics</p>
+                </div>
+                <div class="release-card">
+                    <h3>Soulful Echoes</h3>
+                    <p>Soul/R&B | 2023</p>
+                    <p style="font-size: 0.8rem; margin-top: 10px;">Smooth melodies and heartfelt vocals</p>
+                </div>
+                <div class="release-card">
+                    <h3>Electric Nights</h3>
+                    <p>Synthwave | 2023</p>
+                    <p style="font-size: 0.8rem; margin-top: 10px;">Retro-futuristic electronic vibes</p>
+                </div>
+                <div class="release-card">
+                    <h3>Acoustic Sessions</h3>
+                    <p>Acoustic | 2023</p>
+                    <p style="font-size: 0.8rem; margin-top: 10px;">Intimate unplugged performances</p>
+                </div>
+                <div class="release-card">
+                    <h3>Fusion Vibes</h3>
+                    <p>World Fusion | 2022</p>
+                    <p style="font-size: 0.8rem; margin-top: 10px;">Blending cultures through music</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Section -->
+    <section id="tour" class="tour">
+        <div class="container">
+            <h2 class="section-title">Upcoming Shows</h2>
+            <div style="overflow-x: auto;">
+                <table class="tour-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>City</th>
+                            <th>Venue</th>
+                            <th>Ticket Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Aug 15, 2024</td>
+                            <td>Mumbai</td>
+                            <td>Blue Frog</td>
+                            <td>₹500 - ₹2500</td>
+                        </tr>
+                        <tr>
+                            <td>Aug 22, 2024</td>
+                            <td>Delhi</td>
+                            <td>Hard Rock Cafe</td>
+                            <td>₹500 - ₹2500</td>
+                        </tr>
+                        <tr>
+                            <td>Aug 29, 2024</td>
+                            <td>Bangalore</td>
+                            <td>The Humming Tree</td>
+                            <td>₹500 - ₹2500</td>
+                        </tr>
+                        <tr>
+                            <td>Sep 5, 2024</td>
+                            <td>Pune</td>
+                            <td>Surbandhan</td>
+                            <td>₹500 - ₹2500</td>
+                        </tr>
+                        <tr>
+                            <td>Sep 12, 2024</td>
+                            <td>Kolkata</td>
+                            <td>Someplace Else</td>
+                            <td>₹500 - ₹2500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Merchandise Section -->
+    <section id="merchandise" class="merchandise">
+        <div class="container">
+            <h2 class="section-title">Official Merchandise</h2>
+            <div class="merch-grid">
+                <div class="merch-card">
+                    <h3>Classic T-Shirt</h3>
+                    <p style="color: #b8b8c8; margin: 10px 0;">High-quality cotton with logo print</p>
+                    <div class="merch-price">₹499</div>
+                    <p style="color: #999; font-size: 0.9rem; margin-bottom: 15px;">Available in S, M, L, XL, XXL</p>
+                    <button class="merch-btn" onclick="alert('Merchandise ordering coming soon!')">Order Now</button>
+                </div>
+                <div class="merch-card">
+                    <h3>Premium Hoodie</h3>
+                    <p style="color: #b8b8c8; margin: 10px 0;">Comfortable fleece with embroidered design</p>
+                    <div class="merch-price">₹999</div>
+                    <p style="color: #999; font-size: 0.9rem; margin-bottom: 15px;">Available in S, M, L, XL, XXL</p>
+                    <button class="merch-btn" onclick="alert('Merchandise ordering coming soon!')">Order Now</button>
+                </div>
+                <div class="merch-card">
+                    <h3>Vinyl Record</h3>
+                    <p style="color: #b8b8c8; margin: 10px 0;">Limited edition vinyl with album artwork</p>
+                    <div class="merch-price">₹1499</div>
+                    <p style="color: #999; font-size: 0.9rem; margin-bottom: 15px;">Collector's item - Limited stock</p>
+                    <button class="merch-btn" onclick="alert('Merchandise ordering coming soon!')">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-card">
+                    <h3><i class="fas fa-phone"></i> Phone</h3>
+                    <p>+91 76309 95202</p>
+                    <a href="tel:+917630995202">Call Now</a>
+                </div>
+                <div class="contact-card">
+                    <h3><i class="fas fa-envelope"></i> Email</h3>
+                    <p>contact@johnadar.music</p>
+                    <a href="mailto:contact@johnadar.music">Send Email</a>
+                </div>
+                <div class="contact-card">
+                    <h3><i class="fab fa-whatsapp"></i> WhatsApp</h3>
+                    <p>+91 76309 95202</p>
+                    <a href="https://wa.me/917630995202" target="_blank">Message on WhatsApp</a>
+                </div>
+                <div class="contact-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Manager</h3>
+                    <p>For bookings and inquiries</p>
+                    <a href="tel:+917630995202">Contact Manager</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2024 John Adar Music. All rights reserved.</p>
             <div class="social-links">
-                <a href="https://www.instagram.com/johnadarmusic" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/@johnadarmusic" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://open.spotify.com/artist/johnadar" target="_blank"><i class="fab fa-spotify"></i></a>
+                <a href="https://www.instagram.com/johnadarmusic" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@johnadarmusic" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://open.spotify.com/artist/johnadar" target="_blank" title="Spotify"><i class="fab fa-spotify"></i></a>
+                <a href="https://www.facebook.com/johnadarmusic" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- JSON-LD Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "MusicArtist",
-      "name": "John Adar",
-      "alternateName": "John Adar Music Artist",
-      "description": "Contemporary music artist known for blending modern production with soulful melodies",
-      "url": "https://johnadar.github.io/John-adar-music/",
-      "image": [
-        "https://johnadar.github.io/John-adar-music/john-adar-artist.jpg",
-        "https://johnadar.github.io/John-adar-music/john-adar-performance.jpg"
-      ],
-      "sameAs": [
-        "https://www.instagram.com/johnadarmusic",
-        "https://www.youtube.com/@johnadarmusic",
-        "https://open.spotify.com/artist/johnadar"
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "bestRating": "5",
-        "worstRating": "1",
-        "ratingCount": "500"
-      }
-    }
-    </script>
+    <!-- UPI Payment Modal -->
+    <div id="upiPaymentModal">
+        <div class="modal-content">
+            <h2 style="color: #e94560; margin-bottom: 20px; font-size: 28px; font-weight: 700;">UPI Payment</h2>
+            <p style="color: #333; margin-bottom: 15px; font-size: 16px;">Donation Amount:</p>
+            <p style="color: #e94560; font-size: 32px; font-weight: 700; margin-bottom: 20px;" id="upiAmount">₹0</p>
+            <p style="color: #666; margin-bottom: 10px; font-size: 14px;">UPI ID:</p>
+            <p style="color: #333; font-family: monospace; font-weight: 600; margin-bottom: 20px; font-size: 16px;">7578842926-8@ybl</p>
+            <div style="background: #f5f5f5; padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+                <p style="color: #666; margin: 0; font-size: 14px;">Click the button below to open your UPI app and complete payment</p>
+            </div>
+            <button onclick="processUPIPayment()" style="width: 100%; padding: 15px; background: #e94560; color: white; border: none; border-radius: 8px; font-weight: 600; font-size: 16px; cursor: pointer; margin-bottom: 10px; transition: all 0.3s ease;" onmouseover="this.style.background='#ff6b9d'" onmouseout="this.style.background='#e94560'">Open UPI App</button>
+            <button onclick="closeUPIModal()" style="width: 100%; padding: 12px; background: #ddd; color: #333; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='#ccc'" onmouseout="this.style.background='#ddd'">Cancel</button>
+            <p style="color: #999; margin-top: 15px; font-size: 12px;">After payment, you can close this window</p>
+        </div>
+    </div>
 
-    <!-- UPI Payment JavaScript -->
+    <!-- JavaScript -->
     <script>
         const UPI_ID = '7578842926-8@ybl';
         let selectedAmount = 0;
 
         function showUPIPayment(amount) {
-            // If no amount provided, get from custom input
             if (!amount) {
                 amount = document.getElementById('customDonationAmount').value;
             }
-
-            // Validate
             if (!amount || isNaN(amount) || amount <= 0) {
                 alert('Please enter a valid amount');
                 return;
             }
-
             selectedAmount = parseInt(amount);
             document.getElementById('upiAmount').textContent = '₹' + selectedAmount;
-            document.getElementById('upiPaymentModal').style.display = 'flex';
+            document.getElementById('upiPaymentModal').classList.add('active');
         }
 
         function closeUPIModal() {
-            document.getElementById('upiPaymentModal').style.display = 'none';
+            document.getElementById('upiPaymentModal').classList.remove('active');
         }
 
         function processUPIPayment() {
@@ -224,20 +843,11 @@
                 alert('Invalid amount');
                 return;
             }
-
-            // Create UPI link
             const upiLink = 'upi://pay?pa=' + UPI_ID + '&pn=JohnAdarMusic&am=' + selectedAmount + '&tn=Donation&tr=' + Date.now();
-
-            console.log('Opening UPI:', upiLink);
-
-            // Close modal
             closeUPIModal();
-
-            // Open UPI app
             window.location.href = upiLink;
         }
 
-        // Close modal when clicking outside
         document.getElementById('upiPaymentModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeUPIModal();
@@ -276,15 +886,23 @@
         // Service Worker
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
-                navigator.serviceWorker.register('sw.js')
-                    .then(function(registration) {
-                        console.log('Service Worker registered');
-                    })
-                    .catch(function(error) {
-                        console.log('Service Worker registration failed:', error);
-                    });
+                navigator.serviceWorker.register('sw.js').catch(function(error) {
+                    console.log('Service Worker registration failed:', error);
+                });
             });
         }
+    </script>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicArtist",
+      "name": "John Adar",
+      "url": "https://johnadar.github.io/John-adar-music/",
+      "image": "https://johnadar.github.io/John-adar-music/john-adar-artist.jpg",
+      "description": "Contemporary music artist with 2M+ streams and 50+ live performances"
+    }
     </script>
 </body>
 </html>
